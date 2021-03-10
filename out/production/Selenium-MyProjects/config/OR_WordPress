@@ -1,0 +1,6 @@
+LoginLink = .x-nav-list--right>.x-nav-item--wide>.x-link
+ContinueButton = button.social-buttons__button.button:nth-child(1)>span.social-buttons__service-name
+textBox_email = input[id='identifierId'][type='email']
+NextButton1 = div.VfPpkd-RLmnJb
+textBox_password = input[type = 'password']
+NextButton2 = div.VfPpkd-RLmnJb

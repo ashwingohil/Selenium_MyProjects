@@ -1,0 +1,7 @@
+loginButton = div._1JBkpB_FOZMZ7IPr3FyNfH>a:first-of-type
+iframeElement = iframe._25r3t_lrPF3M6zD2YkWvZU
+clickOnContinue = div.Sso__button.Sso__googleIdButton
+emailTextBox = input#identifierId
+nextButton1 = div.VfPpkd-RLmnJb
+passwordTextBox = input[type='password']
+nextButton2 = div.VfPpkd-RLmnJb

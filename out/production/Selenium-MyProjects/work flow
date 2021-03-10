@@ -1,0 +1,9 @@
+
+Automate the flow:
+Open browser
+Navigate to url
+Enter username
+Enter password
+Click on Login Button
+Wait for seconds
+Click on Logout Button

@@ -1,0 +1,13 @@
+Watch for asserts how they are made
+
+Check out the TestNG annotations. here to change the xml was not required
+
+Watch for the method setup, i directly call the method as it is public and class extends testbase
+
+
+In SignupTest page, we see that the pop up of signup page is not a child window. it is not another window
+The SignupTest page is not necessary to make methods. instead just use the object and call 0the respective methods from
+FbSignUpPage(real action). In such case there will be public static void main(String[] args
+OR
+make the setup method, loadpage method and third method is signupPage() . In this method use the object and call respective
+methods from signupPage. this will also do. so testng can be used

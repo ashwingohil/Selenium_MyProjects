@@ -1,0 +1,20 @@
+First make DataEngine that is Action, PageObject excel
+Then make OR (object repository) to map PageObject and element locators
+
+Put excel(dataengine) in package dataEngine
+And put OR in package config
+
+Next create a class Constants in package config
+
+Next create a class ExcelUtils in package utility
+
+Now create methods in ActionKeywords class in config package
+Go through the excel and create methods for each ActionWord but dont start writing methods first
+
+And parallely create a DriverScript in package executionEngine
+and setExcel, instantiate Object Repository
+
+And then come back to ActionKeywordClass and write the methods
+
+And then write the remaining loop flow in driverscript
+

@@ -1,0 +1,78 @@
+
+This section is about Folder SeleniumConcepts2
+
+Some classes from the api to go through
+These are import statements from the selenium
+
+org.openqa.selenium.WebDriver https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.html
+org.openqa.selenium.WebElement https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebElement.html
+org.openqa.selenium.By
+
+org.openqa.selenium.interactions.Actions
+org.openqa.selenium.interactions.Action
+
+org.openqa.selenium.firefox.FirefoxDriver
+org.openqa.selenium.chrome.ChromeDriver
+
+1) Lets explore first class WebDriver
+Webdriver is an interface. So no object can be instantiated Directly like new Webdriver(). This is wrong
+Implementing classes ChromeDriver, FirefoxDriver
+
+So, Webdriver driver = new FirefoxDriver(). This is how you instantiate an object.
+
+There are methods like
+driver.get() returns void
+driver.findElement(By by) returns WebElement
+driver.findElements(By by) returns List of WebElements
+driver.getTitle() returns String
+driver.getWindowHandle() returns String
+driver.close() closes the window quitting the browser
+driver.quit() closes the driver
+
+Actions class is important to do composite actions. chaining methods
+Actions builder = new Actions(driver)
+builder.(chain of methods).build() ==  this will throw Action as return type
+Import Action class also which has only one method perform
+so then I can builder.build().perform()
+
+Pay attention to methods
+manage()
+navigate()
+switchTo()
+They return static interfaces. So you need to chain methods from interfaces documentation. Explore
+WebDriver.TargetLocator
+In WebDriver.TargetLocator , there is method alert() which returns Alert object. Explore Alert api. Chain the methods
+from the methods written in this class
+
+Look at manage() in WebDriver api, it returns WebDriver.Options. Check this interface, you have method window().
+So chain it. driver.manage().window() Now look in its return type (window()) which is WebDriver.Window. It has
+maximize which returns void. So driver.manage().window().maximize()
+
+WebDriver.Options
+In it there are timeOuts which returns WebDriver.TimeOuts
+In WebDriver.TimeOuts, chain the methods for implicit waits
+
+Refer By class
+
+
+Now lets come to Page Object Model
+
+org.openqa.selenium.support.FindBy;
+org.openqa.selenium.support.How;
+org.openqa.selenium.support.PageFactory
+
+First how the annotations work
+
+@FindBy(how = How.XPATH, xpath = "....") (first write the below line and then annotate) there is no semicolon
+WebElement login; (write this first and on top of it then write the annotation)
+
+refer to POM1, annotations for @priority, @beforeSuite and all is not necessary (From TestNG)
+Also note that such annotations can be put to parameterless methods too
+
+Reference: https://www.lambdatest.com/blog/selenium-java-testing-page-object-model/
+
+Check out the Function<> way to wait for element which is explicit wait. I dont fully understand it. Know about
+implicit explicit wait from the api
+
+FOR WAITS: https://www.browserstack.com/guide/wait-commands-in-selenium-webdriver
+http://www.qaautomated.com/2016/10/implicit-wait-explicit-wait-and-fluent.html

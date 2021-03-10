@@ -1,0 +1,102 @@
+Css selectors
+
+There are many ways to find out css selectors
+
+1) Using class and html tag
+Refer CssSelector snippet
+
+Always hover and look up the tree on the inspect element and look on the webpage for highlighted region of element
+
+html tags are there and there are attributes
+Like <a...... here a is the html tag. It can contain attributes like class = ".... "
+Now note that classes can be a group of classes in the attribute class = "class1 class2"
+They are seperated by space.
+So <a class = "class1 class2"
+
+One way to catch css selector is by a class. the seperator is "." = a period
+so a.class1 (if there was 1 class only)
+a.class1.class2 (if there were 2 classes in the attribute class = )
+
+You can also write directly .class1.class2 (no need of html tag)
+
+If there was just one class i can remove the html tag and just write .class1
+Note: if there are multiple classes it is best practice to chain all like .class1.class2
+If i am using html tag  then i can write htmltag.(only 1 class) = htmltag.class2 [this will also work]
+Take the last class in the chain. That works
+
+There is also other way. If i remove all html tags and want to keep classes then write .(last class in the chain)
+
+Now, this is basic. But I have a tree on inspect element as i trace and see the selected webelement region
+tracing means moving little up and narrowing down the tree
+
+There is a concept of parent and child. On the tree there is actually a parent
+For example (refer cssSelector css1 method) The login link on wordpress has <ul> --> <li> --<a>
+Look at the highlighted regions over the page, you will see a flow
+Under this circumstance you use [>] this marker and form the query
+So ul.class1.class2>li.class1.class2>a.class1.class2
+
+2) nth child concept
+refer notes on selenium in one note
+suppose there is a tree like
+<li
+  <ul>
+    <li
+    <li
+    <li
+
+Then it can be li.class(write it) > ul >li:nth-child(3)
+If nth-child contains a tag below it. then li:nth-child(3)>a.class (this is also a way)
+Refer css1 method in snippet //IMPORTANT
+
+3)If there is id then we put the marker as #
+ul#categories (categories is id)
+#categories (without html tag) will also do
+input#username
+
+4) Using single or multiple properties
+Suppose tag is
+
+<input id="username" type="email" class = "form-control private-form__control login-email"
+
+So I can use
+with 1 attribute: input[id='username']
+with 2 attributes: input[id='username'][type='email']
+
+There are cases where dynamic id's are generated. In this case we can use the contains method
+(contains the text method in css)
+input[id *= 'user']  //no need the write the whole attribute value
+OR
+input[id *= 'name'] //this will also do
+
+
+(starting with text method in css)
+input[id ^= 'user'] OR input[id ^= 'u']
+
+(ending with text method in css)
+input[id $= 'name']
+
+ALWAYS WRITE THE QUERY IN INSPECTOR SEARCH BAR AND CHECK THE STATUS AS 1 of 1 or 1 of 3. This way you
+will know
+
+Check webElement "siteLink" in CssSelector snippet and topics are covered
+topics : nth-child, first-of-type, last-of-type, nth-of-type
+always use the root element in inspector search(it has to something unique) then > then check for
+various list of childs by using first-of-type, last-of-type then nth-of-type and then see if nth-child works
+
+Note: while writing nth-child(1) you have to write more like > (next element) to actually arrive at
+else in inspector it wont find and will delete the selector
+You can select from the dropdown auto suggest in inspector
+
+even nth-of-type then i have to write more like >div (tag) to arrive at the element else it will delete the
+query
+
+Sometimes there may be bunch of classes in a tag. you can append that is chain with DOT till that many
+classes from the bunch till inspector shows 1 or 1 that means its unique now. and it really refers to
+that webelement desired / check if it not showing some other webelement
+IMPORTANT: sometimes from the bunch of classes, one class only signifies the element.
+refer publish1 element in CssSelector. Here among the node nothing is similar like different tags
+on this node. so i can simply jump to the various tags inside it by >
+
+
+
+
